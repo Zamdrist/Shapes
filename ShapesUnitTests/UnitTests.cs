@@ -1,8 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shapes;
 
-namespace ShapesUnitTests
+namespace Shapes.UnitTests
 {
     [TestClass]
     public class UnitTestsForShapes
