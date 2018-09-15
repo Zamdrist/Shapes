@@ -1,6 +1,6 @@
 ﻿namespace Shapes
 {
-	internal interface ISerialized
+	internal interface IShape
 	{
 		string SerializeShape();
 
