@@ -6,10 +6,11 @@ namespace Shapes
     {
         static void Main(string[] args)
         {
-	        ISerialized rectangle = new Rectangle(
-		        "Steve's Perfect Rectangle",
-		        144,
-		        Rectangle.PerfectSquareReturns.Perimeter);
+	        IShape rectangle = new Rectangle(
+		        "My Rectangle",
+		        4,
+		        1.1,
+		        Rectangle.RectangleReturns.LengthArea);
 			Console.WriteLine(rectangle.SerializeShape());
 	        Console.ReadLine();
         }

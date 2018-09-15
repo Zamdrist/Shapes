@@ -5,7 +5,7 @@ namespace Shapes
 {
 
     [DataContract]
-    public class Shape : ISerialized
+    public class Shape : IShape
     {
         [DataMember] public double Perimeter { get; set; }
         [DataMember] public double Area { get; set; }
@@ -16,5 +16,6 @@ namespace Shapes
 	    {
 		    return JsonConvert.SerializeObject(this, Formatting.Indented);
 	    }
+
     }
 }
