@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 
 namespace Shapes
 {
@@ -139,8 +138,6 @@ namespace Shapes
         private double CalculateFromArea(double side, double area) => area / side;
         private double FromPerfectPerimeter(double dimension) => dimension / 4;
         private double FromPerfectArea(double dimension) => Math.Sqrt(dimension);
-
-        public string SerializedRectangle() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
     }
 }
