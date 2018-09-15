@@ -8,6 +8,7 @@ namespace Shapes
     {
         [DataMember] public double Length { get; private set; }
         [DataMember] public double Width { get; private set; }
+	    [DataMember] public double Perimeter { get; set; }
 
         /// <summary>
         /// Enumeration denotes what is to be returned

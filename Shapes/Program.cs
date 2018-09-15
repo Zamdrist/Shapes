@@ -8,8 +8,8 @@ namespace Shapes
         {
 	        IShape rectangle = new Rectangle(
 		        "My Rectangle",
-		        4,
-		        1.1,
+		        17,
+		        35,
 		        Rectangle.RectangleReturns.LengthArea);
 			Console.WriteLine(rectangle.SerializeShape());
 	        Console.ReadLine();
