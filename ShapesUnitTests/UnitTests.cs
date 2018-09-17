@@ -6,6 +6,40 @@ namespace Shapes.UnitTests
     [TestClass]
     public class UnitTestsForShapes
     {
+	    [TestMethod]
+	    public void CircleFromRadius()
+	    {
+			var random = new Random();
+		    var radius = random.NextDouble();
+			var circle = new Circle("My circle", radius);
+
+		    Assert.IsTrue(
+			    radius - circle.Radius <= 0 //radius
+                && 2 * radius - circle.Diameter <= 0 //diameter
+			    && 2 * Math.PI * radius - circle.Circumference <= 0 //circumference
+				&& Math.PI * Math.Pow(radius, 2) - circle.Area <= 0 //area
+                && string.IsNullOrEmpty(circle.ShapeException));
+	    }
+
+	    [TestMethod]
+	    public void CircleFromCircumference()
+	    {
+			var random = new Random();
+		    var circumference = random.Next(1, 100);
+			var circle = new Circle("My circle", circumference, Circle.CircleDimensions.Circumference);
+
+		    var var1 = circumference - circle.Circumference;
+		    var var2 = circumference - 2 * Math.PI * circle.Radius;
+		    var var3 = circumference - Math.PI * circle.Diameter;
+		    var var4 = Math.Pow(circumference / (2 * Math.PI), 2) * Math.PI - circle.Area;
+
+            Assert.IsTrue(
+				circumference - circle.Circumference <= 0 //circumference
+				&& circumference - 2 * Math.PI * circle.Radius <= 0 //radius
+				&& circumference - Math.PI * circle.Diameter <= 0 //diameter
+				&& Math.Pow(circumference / (2 * Math.PI), 2) * Math.PI - circle.Area <= 0 //area
+			    && string.IsNullOrEmpty(circle.ShapeException));
+	    }
 
         [TestMethod]
         public void BasicPerimeterAreaTest()
@@ -20,8 +54,8 @@ namespace Shapes.UnitTests
                 width);
 
             Assert.IsTrue(
-                Math.Abs(length * width - rectangle.Area) < 1
-                && Math.Abs(2 * (length + width) - rectangle.Perimeter) < 1
+                length * width - rectangle.Area <- 0
+                && 2 * (length + width) - rectangle.Perimeter <= 0
                 && string.IsNullOrEmpty(rectangle.ShapeException));
         }
 
@@ -38,9 +72,10 @@ namespace Shapes.UnitTests
                 area,
                 Rectangle.RectangleReturns.LengthPerimeter);
 
-            Assert.IsTrue(
-                Math.Abs(area / width - rectangle.Length) < 1
-                && Math.Abs(rectangle.Length * rectangle.Width - area) < 1 && string.IsNullOrEmpty(rectangle.ShapeException));
+	        Assert.IsTrue(
+		        area / width - rectangle.Length <= 0
+		        && rectangle.Length * rectangle.Width - area <= 0
+		        && string.IsNullOrEmpty(rectangle.ShapeException));
         }
 
         [TestMethod]
