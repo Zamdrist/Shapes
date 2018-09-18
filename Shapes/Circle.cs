@@ -58,9 +58,10 @@ namespace Shapes
             }
 	    }
 
-	    private double RadiusFromCircumference(double dimension) => dimension / (2 * Math.PI);
-
-        private double CalculateCircumference(double dimension) => 2 * Math.PI * dimension;
+	    private double RadiusFromCircumference(double dimension) =>
+		    dimension / (2 * Math.PI);
+	    private double CalculateCircumference(double dimension) =>
+		    2 * Math.PI * dimension;
 	    private double CalculateDiameter(double dimension) => 2 * dimension;
 	    private double CalculateArea(double dimension) =>
 		    Math.PI * (Math.Pow(dimension, 2));
