@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
 namespace Shapes
@@ -7,11 +8,13 @@ namespace Shapes
     [DataContract]
     public class Shape : IShape
     {
-        [DataMember] public double Area { get; set; }
-        [DataMember] public string ShapeName { get; set; }
+
+	    [DataMember]
+	    public double Area { get; set; }
+	    [DataMember] public string ShapeName { get; set; }
         [DataMember] public string ShapeException { get; set; }
 
-	    public string SerializeShape()
+        public string SerializeShape()
 	    {
 		    return JsonConvert.SerializeObject(this, Formatting.Indented);
 	    }
