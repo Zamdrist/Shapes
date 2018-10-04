@@ -4,6 +4,35 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Shapes.UnitTests
 {
+	[TestClass]
+	public class UnitTestsForRightTriangle
+	{
+		[TestMethod]
+		public void Legs()
+		{
+			const double legA = 1;
+			const double legB = 2;
+			const double hypotenuse = 2.24;
+			const double perimeter = 5.24;
+			const double area = 1;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legA,
+				legB,
+				RightTriangle.RightTriangleDimensions.Legs);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+
+		}
+
+	}
+
     [TestClass]
     public class UnitTestsForRectangle
     {
