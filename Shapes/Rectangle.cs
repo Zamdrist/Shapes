@@ -6,18 +6,12 @@ namespace Shapes
     [DataContract]
     public class Rectangle : Shape
     {
-
-        [DataMember]
-        public double Length { get; private set; }
-
-        [DataMember]
-        public double Width { get; private set; }
-
-        [DataMember]
-        public double Perimeter { get; private set; }
+        [DataMember] public double Length { get; private set; }
+        [DataMember] public double Width { get; private set; }
+        [DataMember] public double Perimeter { get; private set; }
 
         /// <summary>
-        /// Enumeration denotes what is to be returned
+        /// Enumeration denotes dimensions provided
         /// </summary>
         public enum RectangleDimensions
         {
@@ -29,7 +23,7 @@ namespace Shapes
         }
 
         /// <summary>
-        /// Enumeration denotes what is to be returned
+        /// Enumeration denotes dimensions provided
         /// </summary>
         public enum PerfectSquare
         {
@@ -38,7 +32,7 @@ namespace Shapes
         }
 
         /// <summary>
-        /// Provide the appropriate values for what you wish to return
+        /// Provide the appropriate values for what you are passing in
         /// </summary>
         /// <param name="rectangleName">The name of your rectangle</param>
         /// <param name="firstDimension">Either the length or width</param>
@@ -53,7 +47,7 @@ namespace Shapes
             this.ShapeName = rectangleName;
             if (firstDimension <= 0 || secondDimension <= 0)
             {
-                this.ShapeException = "Parameters should be greater than zero";
+                this.ShapeException = "Dimensions should be greater than zero";
                 return;
             }
 
@@ -114,7 +108,7 @@ namespace Shapes
         /// </summary>
         /// <param name="rectangleName">The name of your rectangle</param>
         /// <param name="firstDimension">Either the perimeter or the area</param>
-        /// <param name="dimensions">Which dimension to return</param>
+        /// <param name="dimensions">Which dimension you are providing</param>
         public Rectangle(
             string rectangleName,
             double firstDimension,
@@ -123,7 +117,7 @@ namespace Shapes
             this.ShapeName = rectangleName;
             if (firstDimension <= 0)
             {
-                this.ShapeException = "Parameter must be greater than zero";
+                this.ShapeException = "Dimensions must be greater than zero";
                 return;
             }
 
