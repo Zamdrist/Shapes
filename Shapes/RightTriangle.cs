@@ -22,7 +22,13 @@ namespace Shapes
             LegAArea,
             LegBArea
         }
-
+        /// <summary>
+        /// Provide the appropriate values for what you are passing in
+        /// </summary>
+        /// <param name="shapeName">The name of your right triangle</param>
+        /// <param name="firstDimension">Leg A</param>
+        /// <param name="secondDimension">Either Leg B, or Leg A/B with enumerated dimension</param>
+        /// <param name="dimensions">The dimensions you are providing</param>
         public RightTriangle(
             string shapeName,
             double firstDimension,

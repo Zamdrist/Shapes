@@ -11,7 +11,7 @@ namespace Shapes
 		[DataMember] public double Circumference { get; set; }
 
 		/// <summary>
-        /// The name of the value you are sending. Radius is the default
+        /// Enumeration denotes dimensions provided. Radius is the default
         /// </summary>
 		public enum CircleDimensions
 		{
@@ -24,7 +24,7 @@ namespace Shapes
         /// </summary>
         /// <param name="circleName">The name of your circle</param>
         /// <param name="dimension">The value of the dimension you are providing</param>
-        /// <param name="circleDimensions">The name of the value you are providing</param>
+        /// <param name="circleDimensions">The dimension you are providing</param>
 	    public Circle(string circleName, double dimension, CircleDimensions circleDimensions = 0)
 	    {
 		    this.ShapeName = circleName;
