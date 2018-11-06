@@ -4,6 +4,125 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Shapes.UnitTests
 {
+	[TestClass]
+	public class UnitTestsForRightTriangle
+	{
+		[TestMethod]
+		public void Legs()
+		{
+			const double legA = 1;
+			const double legB = 2;
+			const double hypotenuse = 2.24;
+			const double perimeter = 5.24;
+			const double area = 1;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legA,
+				legB,
+				RightTriangle.RightTriangleDimensions.Legs);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+		}
+
+		[TestMethod]
+		public void LegAPerimeter()
+		{
+			const double legA = 10.93;
+			const double legB = 10;
+			const double hypotenuse = 14.81;
+			const double perimeter = 35.75;
+			const double area = 54.65;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legA,
+				perimeter,
+				RightTriangle.RightTriangleDimensions.LegAPerimeter);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+		}
+
+		[TestMethod]
+		public void LegBPerimeter()
+		{
+			const double legA = 1.80;
+			const double legB = 13.53;
+			const double hypotenuse = 13.65;
+			const double perimeter = 28.98;
+			const double area = 12.18;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legB,
+				perimeter,
+				RightTriangle.RightTriangleDimensions.LegBPerimeter);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+		}
+
+		[TestMethod]
+		public void LegAArea()
+		{
+			const double legA = 12;
+			const double legB = 144;
+			const double hypotenuse = 144.5;
+			const double perimeter = 300.5;
+			const double area = 864;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legA,
+				area,
+				RightTriangle.RightTriangleDimensions.LegAArea);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+		}
+
+		[TestMethod]
+		public void LegBArea()
+		{
+			const double legA = 22;
+			const double legB = 2.2;
+			const double hypotenuse = 22.11;
+			const double perimeter = 46.31;
+			const double area = 24.2;
+
+			var tri = new RightTriangle(
+				"My right triangle",
+				legB,
+				area,
+				RightTriangle.RightTriangleDimensions.LegBArea);
+
+			Assert.AreEqual(tri.LegA, legA);
+			Assert.AreEqual(tri.LegB, legB);
+			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
+			Assert.AreEqual(tri.Perimeter, perimeter);
+			Assert.AreEqual(tri.Area, area);
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+		}
+    }
+
     [TestClass]
     public class UnitTestsForRectangle
     {
