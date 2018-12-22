@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Shapes;
 
 namespace ShapeApi.Controllers
@@ -12,14 +7,25 @@ namespace ShapeApi.Controllers
     [ApiController]
     public class RectangleController : ControllerBase
     {
-	    [HttpGet]
-	    public ActionResult<Shape> Get(
-		    string shapeName,
-		    double firstDimension,
-		    double secondDimension,
-		    Rectangle.RectangleDimensions rectangleDimensions)
-	    {
-			return new Rectangle(shapeName, firstDimension, secondDimension, rectangleDimensions);
-	    }
+        //https://localhost:44328/api/Rectangle/Sq/11/101/LengthArea
+        [HttpGet("{shapeName}/{firstDimension}/{secondDimension}/{rectangleDimensions}")]
+        public ActionResult<Shape> GetRectangle(
+            string shapeName,
+            double firstDimension,
+            double secondDimension,
+            Rectangle.RectangleDimensions rectangleDimensions)
+        {
+            return new Rectangle(shapeName, firstDimension, secondDimension, rectangleDimensions);
+        }
+        //https://localhost:44328/api/Rectangle/PerfectSquare/MyPerf/10/Area
+        [HttpGet("PerfectSquare/{shapeName}/{firstDimension}/{perfectSquareDimensions}")]
+        public ActionResult<Shape> GetPerfectSquare(
+            string shapeName,
+            double firstDimension,
+            Rectangle.PerfectSquare perfectSquareDimensions)
+        {
+            return new Rectangle(shapeName, firstDimension, perfectSquareDimensions);
+
+        }
     }
 }
