@@ -10,6 +10,7 @@ namespace Shapes
         [DataMember] public double Width { get; private set; }
         [DataMember] public double Perimeter { get; private set; }
 
+
         /// <summary>
         /// Enumeration denotes dimensions provided
         /// </summary>
@@ -45,12 +46,12 @@ namespace Shapes
             RectangleDimensions dimensions)
         {
             this.ShapeName = rectangleName;
-            if (firstDimension <= 0 || secondDimension <= 0)
-            {
-                this.ShapeException = "Dimensions should be greater than zero";
-                return;
-            }
-
+	        var shapeException = new ShapeException(this, dimensions, firstDimension, secondDimension);
+	        this.ShapeException = shapeException.ExceptionText;
+	        if (this.ShapeException != null)
+	        {
+		        return;
+	        }
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (dimensions)
             {
@@ -62,12 +63,6 @@ namespace Shapes
                     break;
 
                 case RectangleDimensions.LengthPerimeter:
-                    if (secondDimension <= 2 * firstDimension)
-                    {
-                        this.ShapeException =
-                            "Perimeter should be greater than two times the length";
-                        break;
-                    }
                     this.Length = firstDimension;
                     this.Perimeter = secondDimension;
                     this.Width = this.CalculateFromPerimeter(this.Length, this.Perimeter);
@@ -75,12 +70,6 @@ namespace Shapes
                     break;
 
                 case RectangleDimensions.WidthPerimeter:
-                    if (secondDimension <= 2 * firstDimension)
-                    {
-                        this.ShapeException =
-                            "Perimeter should be greater than two times the width";
-                        break;
-                    }
                     this.Width = firstDimension;
                     this.Perimeter = secondDimension;
                     this.Length = this.CalculateFromPerimeter(this.Width, this.Perimeter);
@@ -115,11 +104,12 @@ namespace Shapes
             PerfectSquare dimensions)
         {
             this.ShapeName = rectangleName;
-            if (firstDimension <= 0)
-            {
-                this.ShapeException = "Dimensions must be greater than zero";
-                return;
-            }
+	        var shapeException = new ShapeException(this, dimensions, firstDimension);
+	        this.ShapeException = shapeException.ExceptionText;
+	        if (this.ShapeException != null)
+	        {
+		        return;
+	        }
 
             double side = 0;
 
