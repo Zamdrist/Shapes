@@ -29,13 +29,14 @@ namespace Shapes
 	    public Circle(string circleName, double dimension, CircleDimensions circleDimensions)
 	    {
 		    this.ShapeName = circleName;
-		    if (dimension <= 0)
+		    var shapeException = new ShapeException(this, circleDimensions, dimension);
+		    this.ShapeException = shapeException.ExceptionText;
+		    if (this.ShapeException != null)
 		    {
-			    this.ShapeException = "Parameters must be greater than zero";
 			    return;
 		    }
-
-		    switch (circleDimensions)
+            // ReSharper disable once SwitchStatementMissingSomeCases
+            switch (circleDimensions)
 		    {
                 case CircleDimensions.Circumference:
 					//radius from Circumference
@@ -58,7 +59,7 @@ namespace Shapes
 	                this.Area = this.CalculateArea(this.Radius);
 	                this.Circumference = this.CalculateCircumference(this.Radius);
 	                break;
-                default:
+                case CircleDimensions.Radius:
 	                //calculate from radius
 	                this.Radius = dimension;
 	                this.Diameter = this.CalculateDiameter(dimension);

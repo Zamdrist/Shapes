@@ -313,7 +313,7 @@ namespace Shapes.UnitTests
             const double circumference = 18.85;
             const double area = 28.27;
 
-            var circle = new Circle("My circle", radius);
+            var circle = new Circle("My circle", radius, Circle.CircleDimensions.Radius);
 
 
             Assert.AreEqual(circle.Radius, radius);

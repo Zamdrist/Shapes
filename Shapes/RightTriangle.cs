@@ -36,12 +36,12 @@ namespace Shapes
             RightTriangleDimensions dimensions)
         {
             this.ShapeName = shapeName;
-            if (firstDimension <= 0 || secondDimension <= 0)
-            {
-                this.ShapeException = "Dimensions should be greater than zero";
-                return;
-
-            }
+	        var shapeException = new ShapeException(this, dimensions, firstDimension, secondDimension);
+	        this.ShapeException = shapeException.ExceptionText;
+	        if (this.ShapeException != null)
+	        {
+		        return;
+	        }
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (dimensions)
             {
