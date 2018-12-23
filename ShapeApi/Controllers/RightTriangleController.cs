@@ -7,7 +7,13 @@ namespace ShapeApi.Controllers
     [ApiController]
     public class RightTriangleController : ControllerBase
     {
-        //https://localhost:44328/api/RightTriangle/MyRight/10/13/Legs
+	    /// <summary>
+	    /// Create a right triangle
+	    /// </summary>
+	    /// <param name="shapeName">The name of your right triangle</param>
+	    /// <param name="firstDimension">Leg A</param>
+	    /// <param name="secondDimension">Either Leg B, or Leg A/B with enumerated dimension</param>
+	    /// <param name="rightTriangleDimensions">The dimensions you are providing</param>
         [HttpGet("{shapeName}/{firstDimension}/{secondDimension}/{rightTriangleDimensions}")]
         public ActionResult<Shape> GetRightTriangle(
             string shapeName,

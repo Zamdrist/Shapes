@@ -15,6 +15,7 @@ namespace Shapes
         /// </summary>
 		public enum CircleDimensions
 		{
+			Radius = 0,
 			Circumference = 1,
 			Area = 2,
 			Diameter = 3
@@ -25,7 +26,7 @@ namespace Shapes
         /// <param name="circleName">The name of your circle</param>
         /// <param name="dimension">The value of the dimension you are providing</param>
         /// <param name="circleDimensions">The dimension you are providing</param>
-	    public Circle(string circleName, double dimension, CircleDimensions circleDimensions = 0)
+	    public Circle(string circleName, double dimension, CircleDimensions circleDimensions)
 	    {
 		    this.ShapeName = circleName;
 		    if (dimension <= 0)
