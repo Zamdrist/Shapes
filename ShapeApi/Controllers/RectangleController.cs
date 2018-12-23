@@ -7,7 +7,14 @@ namespace ShapeApi.Controllers
     [ApiController]
     public class RectangleController : ControllerBase
     {
-        //https://localhost:44328/api/Rectangle/Sq/11/101/LengthArea
+        /// <summary>
+        /// Create a rectangle
+        /// </summary>
+        /// <param name="shapeName">The name of your rectangle</param>
+        /// <param name="firstDimension">Either the length or width</param>
+        /// <param name="secondDimension">Either the width, perimeter or area</param>
+        /// <param name="rectangleDimensions">The dimensions you are providing</param>
+        /// <returns></returns>
         [HttpGet("{shapeName}/{firstDimension}/{secondDimension}/{rectangleDimensions}")]
         public ActionResult<Shape> GetRectangle(
             string shapeName,
@@ -17,7 +24,12 @@ namespace ShapeApi.Controllers
         {
             return new Rectangle(shapeName, firstDimension, secondDimension, rectangleDimensions);
         }
-        //https://localhost:44328/api/Rectangle/PerfectSquare/MyPerf/10/Area
+        /// <summary>
+        /// Create a perfect square
+        /// </summary>
+        /// <param name="shapeName">The name of your square</param>
+        /// <param name="firstDimension">Either the perimeter or the area</param>
+        /// <param name="perfectSquareDimensions">The dimension you are providing</param>
         [HttpGet("PerfectSquare/{shapeName}/{firstDimension}/{perfectSquareDimensions}")]
         public ActionResult<Shape> GetPerfectSquare(
             string shapeName,
