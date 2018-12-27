@@ -29,11 +29,10 @@ namespace Shapes
 	    public Circle(string circleName, double dimension, CircleDimensions circleDimensions)
 	    {
 		    this.ShapeName = circleName;
-		    var shapeException = new ShapeException(this, circleDimensions, dimension);
-		    this.ShapeException = shapeException.ExceptionText;
-		    if (this.ShapeException != null)
+		    if (Shapes.ShapeValidation.IsZero(new []{dimension}))
 		    {
-			    return;
+			    this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
+				return;
 		    }
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (circleDimensions)

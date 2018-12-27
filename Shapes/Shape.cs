@@ -12,7 +12,7 @@ namespace Shapes
 
 	    [DataMember] public double Area { get; set; }
 	    [DataMember] public string ShapeName { get; set; }
-        [DataMember] public string ShapeException { get; set; }
+        [DataMember] public string ShapeValidation { get; set; }
 
         public string SerializeShape()
 	    {

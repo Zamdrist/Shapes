@@ -10,7 +10,6 @@ namespace Shapes
         [DataMember] public double Width { get; private set; }
         [DataMember] public double Perimeter { get; private set; }
 
-
         /// <summary>
         /// Enumeration denotes dimensions provided
         /// </summary>
@@ -46,13 +45,23 @@ namespace Shapes
             RectangleDimensions dimensions)
         {
             this.ShapeName = rectangleName;
-	        var shapeException = new ShapeException(this, dimensions, firstDimension, secondDimension);
-	        this.ShapeException = shapeException.ExceptionText;
-	        if (this.ShapeException != null)
+	        if (Shapes.ShapeValidation.IsZero(new[] { firstDimension, secondDimension }))
 	        {
+		        this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
 		        return;
 	        }
-            // ReSharper disable once SwitchStatementMissingSomeCases
+
+	        if (dimensions == RectangleDimensions.LengthPerimeter
+		        || dimensions == RectangleDimensions.WidthPerimeter)
+	        {
+		        if (!Shapes.ShapeValidation.IsValidForPerimeter(firstDimension, secondDimension))
+		        {
+			        this.ShapeValidation = Shapes.ShapeValidation.NotValidForPerimeterText;
+			        return;
+		        }
+	        }
+
+	        // ReSharper disable once SwitchStatementMissingSomeCases
             switch (dimensions)
             {
                 case RectangleDimensions.LengthWidth:
@@ -96,18 +105,17 @@ namespace Shapes
         /// Return the perfect square dimensions for a perimeter or area
         /// </summary>
         /// <param name="rectangleName">The name of your rectangle</param>
-        /// <param name="firstDimension">Either the perimeter or the area</param>
+        /// <param name="dimension">Either the perimeter or the area</param>
         /// <param name="dimensions">Which dimension you are providing</param>
         public Rectangle(
             string rectangleName,
-            double firstDimension,
+            double dimension,
             PerfectSquare dimensions)
         {
             this.ShapeName = rectangleName;
-	        var shapeException = new ShapeException(this, dimensions, firstDimension);
-	        this.ShapeException = shapeException.ExceptionText;
-	        if (this.ShapeException != null)
+	        if (Shapes.ShapeValidation.IsZero(new[] { dimension }))
 	        {
+		        this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
 		        return;
 	        }
 
@@ -117,12 +125,12 @@ namespace Shapes
             switch (dimensions)
             {
                 case PerfectSquare.Perimeter:
-                    this.Perimeter = firstDimension;
+                    this.Perimeter = dimension;
                     side = this.FromPerfectPerimeter(this.Perimeter);
                     this.Area = this.CalculateArea(side, side);
                     break;
                 case PerfectSquare.Area:
-                    this.Area = firstDimension;
+                    this.Area = dimension;
                     side = this.FromPerfectArea(this.Area);
                     this.Perimeter = this.CalculatePerimeter(side, side);
                     break;
