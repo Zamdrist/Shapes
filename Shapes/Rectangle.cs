@@ -45,23 +45,23 @@ namespace Shapes
             RectangleDimensions dimensions)
         {
             this.ShapeName = rectangleName;
-	        if (Shapes.ShapeValidation.IsZero(new[] { firstDimension, secondDimension }))
-	        {
-		        this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
-		        return;
-	        }
+            if (Shapes.ShapeValidation.IsZero(new[] { firstDimension, secondDimension }))
+            {
+                this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
+                return;
+            }
 
-	        if (dimensions == RectangleDimensions.LengthPerimeter
-		        || dimensions == RectangleDimensions.WidthPerimeter)
-	        {
-		        if (!Shapes.ShapeValidation.IsValidForPerimeter(firstDimension, secondDimension))
-		        {
-			        this.ShapeValidation = Shapes.ShapeValidation.NotValidForPerimeterText;
-			        return;
-		        }
-	        }
+            if (dimensions == RectangleDimensions.LengthPerimeter
+                || dimensions == RectangleDimensions.WidthPerimeter)
+            {
+                if (!Shapes.ShapeValidation.IsValidForPerimeter(firstDimension, secondDimension))
+                {
+                    this.ShapeValidation = Shapes.ShapeValidation.NotValidForPerimeterText;
+                    return;
+                }
+            }
 
-	        // ReSharper disable once SwitchStatementMissingSomeCases
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (dimensions)
             {
                 case RectangleDimensions.LengthWidth:
@@ -113,11 +113,11 @@ namespace Shapes
             PerfectSquare dimensions)
         {
             this.ShapeName = rectangleName;
-	        if (Shapes.ShapeValidation.IsZero(new[] { dimension }))
-	        {
-		        this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
-		        return;
-	        }
+            if (Shapes.ShapeValidation.IsZero(new[] { dimension }))
+            {
+                this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
+                return;
+            }
 
             double side = 0;
 

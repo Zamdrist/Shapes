@@ -36,23 +36,23 @@ namespace Shapes
             RightTriangleDimensions dimensions)
         {
             this.ShapeName = shapeName;
-	        if (Shapes.ShapeValidation.IsZero(new[] { firstDimension, secondDimension }))
-	        {
-		        this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
-		        return;
-	        }
+            if (Shapes.ShapeValidation.IsZero(new[] { firstDimension, secondDimension }))
+            {
+                this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
+                return;
+            }
 
-	        if (dimensions == RightTriangleDimensions.LegAPerimeter
-		        || dimensions == RightTriangleDimensions.LegBPerimeter)
-	        {
-		        if (!Shapes.ShapeValidation.IsValidForPerimeter(firstDimension, secondDimension))
-		        {
-			        this.ShapeValidation = Shapes.ShapeValidation.NotValidForPerimeterText;
-			        return;
-		        }
-	        }
+            if (dimensions == RightTriangleDimensions.LegAPerimeter
+                || dimensions == RightTriangleDimensions.LegBPerimeter)
+            {
+                if (!Shapes.ShapeValidation.IsValidForPerimeter(firstDimension, secondDimension))
+                {
+                    this.ShapeValidation = Shapes.ShapeValidation.NotValidForPerimeterText;
+                    return;
+                }
+            }
 
-	        // ReSharper disable once SwitchStatementMissingSomeCases
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (dimensions)
             {
                 case RightTriangleDimensions.Legs:
