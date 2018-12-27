@@ -27,7 +27,7 @@ namespace Shapes.UnitTests
 			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
 			Assert.AreEqual(tri.Perimeter, perimeter);
 			Assert.AreEqual(tri.Area, area);
-			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeValidation));
 		}
 
 		[TestMethod]
@@ -50,7 +50,7 @@ namespace Shapes.UnitTests
 			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
 			Assert.AreEqual(tri.Perimeter, perimeter);
 			Assert.AreEqual(tri.Area, area);
-			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeValidation));
 		}
 
 		[TestMethod]
@@ -73,7 +73,7 @@ namespace Shapes.UnitTests
 			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
 			Assert.AreEqual(tri.Perimeter, perimeter);
 			Assert.AreEqual(tri.Area, area);
-			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeValidation));
 		}
 
 		[TestMethod]
@@ -96,7 +96,7 @@ namespace Shapes.UnitTests
 			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
 			Assert.AreEqual(tri.Perimeter, perimeter);
 			Assert.AreEqual(tri.Area, area);
-			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeValidation));
 		}
 
 		[TestMethod]
@@ -119,7 +119,7 @@ namespace Shapes.UnitTests
 			Assert.AreEqual(tri.Hypotenuse, hypotenuse);
 			Assert.AreEqual(tri.Perimeter, perimeter);
 			Assert.AreEqual(tri.Area, area);
-			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeException));
+			Assert.IsTrue(string.IsNullOrEmpty(tri.ShapeValidation));
 		}
     }
 
@@ -144,7 +144,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rectangle.Width, width);
             Assert.AreEqual(rectangle.Area, area);
             Assert.AreEqual(rectangle.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rectangle.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rectangle.ShapeValidation));
         }
 
         [TestMethod]
@@ -165,7 +165,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Width, width);
             Assert.AreEqual(rect.Area, area);
             Assert.AreEqual(rect.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -187,7 +187,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Width, width);
             Assert.AreEqual(rect.Area, area);
             Assert.AreEqual(rect.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -208,7 +208,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Width, width);
             Assert.AreEqual(rect.Area, area);
             Assert.AreEqual(rect.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -229,7 +229,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Width, width);
             Assert.AreEqual(rect.Area, area);
             Assert.AreEqual(rect.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -248,7 +248,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Length, side);
             Assert.AreEqual(rect.Width, side);
             Assert.AreEqual(rect.Area, area);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -267,7 +267,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(rect.Length, side);
             Assert.AreEqual(rect.Width, side);
             Assert.AreEqual(rect.Perimeter, perimeter);
-            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -282,7 +282,7 @@ namespace Shapes.UnitTests
                 width,
                 Rectangle.RectangleDimensions.LengthWidth);
 
-            Assert.IsTrue(!string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(!string.IsNullOrEmpty(rect.ShapeValidation));
         }
 
         [TestMethod]
@@ -297,7 +297,7 @@ namespace Shapes.UnitTests
                 perimeter,
                 Rectangle.RectangleDimensions.LengthPerimeter);
 
-            Assert.IsTrue(!string.IsNullOrEmpty(rect.ShapeException));
+            Assert.IsTrue(!string.IsNullOrEmpty(rect.ShapeValidation));
         }
     }
 
@@ -320,7 +320,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(circle.Diameter, diameter);
             Assert.AreEqual(circle.Circumference, circumference);
             Assert.AreEqual(circle.Area, area);
-            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeValidation));
 
         }
 
@@ -339,7 +339,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(circle.Diameter, diameter);
             Assert.AreEqual(circle.Circumference, circumference);
             Assert.AreEqual(circle.Area, area);
-            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeValidation));
         }
 
         [TestMethod]
@@ -359,7 +359,7 @@ namespace Shapes.UnitTests
             Assert.AreEqual(circle.Radius, radius);
             Assert.AreEqual(circle.Diameter, diameter);
             Assert.AreEqual(circle.Area, area);
-            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeException));
+            Assert.IsTrue(string.IsNullOrEmpty(circle.ShapeValidation));
         }
 
         [TestMethod]
@@ -385,7 +385,7 @@ namespace Shapes.UnitTests
 
             var circle = new Circle("My circle",diameter, Circle.CircleDimensions.Diameter);
 
-            Assert.IsTrue(!string.IsNullOrEmpty(circle.ShapeException));
+            Assert.IsTrue(!string.IsNullOrEmpty(circle.ShapeValidation));
         }
 
     }
