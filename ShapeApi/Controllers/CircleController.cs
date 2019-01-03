@@ -14,7 +14,7 @@ namespace ShapeApi.Controllers
 	    /// <param name="dimension">The value of the dimension you are providing</param>
 	    /// <param name="circleDimensions">The dimension you are providing</param>
         [HttpGet("{shapeName}/{dimension}/{circleDimensions}")]
-        public ActionResult<Shape> Get(
+        public Circle Get(
             string shapeName,
             double dimension,
             Circle.CircleDimensions circleDimensions)

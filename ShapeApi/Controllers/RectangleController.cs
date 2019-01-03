@@ -16,7 +16,7 @@ namespace ShapeApi.Controllers
         /// <param name="rectangleDimensions">The dimensions you are providing</param>
         /// <returns></returns>
         [HttpGet("{shapeName}/{firstDimension}/{secondDimension}/{rectangleDimensions}")]
-        public ActionResult<Shape> GetRectangle(
+        public Rectangle GetRectangle(
             string shapeName,
             double firstDimension,
             double secondDimension,
@@ -31,7 +31,7 @@ namespace ShapeApi.Controllers
         /// <param name="firstDimension">Either the perimeter or the area</param>
         /// <param name="perfectSquareDimensions">The dimension you are providing</param>
         [HttpGet("PerfectSquare/{shapeName}/{firstDimension}/{perfectSquareDimensions}")]
-        public ActionResult<Shape> GetPerfectSquare(
+        public Rectangle GetPerfectSquare(
             string shapeName,
             double firstDimension,
             Rectangle.PerfectSquare perfectSquareDimensions)
