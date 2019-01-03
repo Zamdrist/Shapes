@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Shapes
 {
-    [DataContract]
+
     public class RightTriangle : Shape
     {
-        [DataMember] public double LegA { get; set; }
-        [DataMember] public double LegB { get; set; }
-        [DataMember] public double Hypotenuse { get; set; }
-        [DataMember] public double Perimeter { get; set; }
+         public double LegA { get; set; }
+         public double LegB { get; set; }
+         public double Hypotenuse { get; set; }
+         public double Perimeter { get; set; }
 
         /// <summary>
         /// Enumeration denotes dimensions provided

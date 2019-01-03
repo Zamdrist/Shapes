@@ -15,7 +15,7 @@ namespace ShapeApi.Controllers
 	    /// <param name="secondDimension">Either Leg B, or Leg A/B with enumerated dimension</param>
 	    /// <param name="rightTriangleDimensions">The dimensions you are providing</param>
         [HttpGet("{shapeName}/{firstDimension}/{secondDimension}/{rightTriangleDimensions}")]
-        public ActionResult<Shape> GetRightTriangle(
+        public RightTriangle GetRightTriangle(
             string shapeName,
             double firstDimension,
             double secondDimension,
