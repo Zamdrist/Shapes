@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Shapes
 {
-    [DataContract]
+
     public class Circle : Shape
     {
-        [DataMember] public double Radius { get; set; }
-        [DataMember] public double Diameter { get; set; }
-        [DataMember] public double Circumference { get; set; }
+         public double Radius { get; set; }
+         public double Diameter { get; set; }
+         public double Circumference { get; set; }
 
         /// <summary>
         /// Enumeration denotes dimensions provided. Radius is the default

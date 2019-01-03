@@ -1,23 +1,16 @@
 ﻿// ReSharper disable once RedundantUsingDirective
 using System;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
-
 namespace Shapes
 {
 
-    [DataContract]
-    public class Shape : IShape
+
+    public class Shape
     {
 
-        [DataMember] public double Area { get; set; }
-        [DataMember] public string ShapeName { get; set; }
-        [DataMember] public string ShapeValidation { get; set; }
+         public double Area { get; set; }
+         public string ShapeName { get; set; }
+         public string ShapeValidation { get; set; }
 
-        public string SerializeShape()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
 
     }
 }

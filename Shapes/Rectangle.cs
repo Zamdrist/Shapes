@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Shapes
 {
-    [DataContract]
     public class Rectangle : Shape
     {
-        [DataMember] public double Length { get; private set; }
-        [DataMember] public double Width { get; private set; }
-        [DataMember] public double Perimeter { get; private set; }
+         public double Length { get; private set; }
+         public double Width { get; private set; }
+         public double Perimeter { get; private set; }
 
         /// <summary>
         /// Enumeration denotes dimensions provided
