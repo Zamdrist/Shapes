@@ -9,6 +9,9 @@ namespace Shapes
          public double Diameter { get; set; }
          public double Circumference { get; set; }
 
+         private readonly string _circleName;
+         private readonly double _dimension;
+         private readonly CircleDimensions _circleDimensions;
         /// <summary>
         /// Enumeration denotes dimensions provided. Radius is the default
         /// </summary>
@@ -27,7 +30,10 @@ namespace Shapes
         /// <param name="circleDimensions">The dimension you are providing</param>
         public Circle(string circleName, double dimension, CircleDimensions circleDimensions)
         {
-            this.ShapeName = circleName;
+            _circleName = circleName;
+            _dimension = dimension;
+            _circleDimensions = circleDimensions;
+            this.CalculateShapeDimensions();
            
         }
 
@@ -44,43 +50,44 @@ namespace Shapes
 
         public override void CalculateShapeDimensions()
         {
-            if (Shapes.ShapeValidation.IsZero(new[] { dimension }))
+            this.ShapeName = _circleName;
+            if (Shapes.ShapeValidation.IsZero(new[] { _dimension }))
             {
                 this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
                 return;
             }
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (circleDimensions)
+            switch (_circleDimensions)
             {
                 case CircleDimensions.Circumference:
                     //radius from Circumference
-                    this.Circumference = dimension;
-                    this.Radius = this.RadiusFromCircumference(dimension);
+                    this.Circumference = this._dimension;
+                    this.Radius = this.RadiusFromCircumference(_dimension);
                     this.Area = this.CalculateArea(this.Radius);
                     this.Diameter = this.CalculateDiameter(this.Radius);
                     break;
                 case CircleDimensions.Area:
                     //radius from Area
-                    this.Area = dimension;
+                    this.Area = _dimension;
                     this.Radius = this.RadiusFromArea(this.Area);
                     this.Diameter = this.CalculateDiameter(this.Radius);
                     this.Circumference = this.CalculateCircumference(this.Radius);
                     break;
                 case CircleDimensions.Diameter:
                     //radius from diameter
-                    this.Diameter = dimension;
+                    this.Diameter = _dimension;
                     this.Radius = this.CalculateRadiusFromDiameter(this.Diameter);
                     this.Area = this.CalculateArea(this.Radius);
                     this.Circumference = this.CalculateCircumference(this.Radius);
                     break;
                 case CircleDimensions.Radius:
                     //calculate from radius
-                    this.Radius = dimension;
-                    this.Diameter = this.CalculateDiameter(dimension);
-                    this.Circumference = this.CalculateCircumference(dimension);
-                    this.Area = this.CalculateArea(dimension);
+                    this.Radius = _dimension;
+                    this.Diameter = this.CalculateDiameter(_dimension);
+                    this.Circumference = this.CalculateCircumference(_dimension);
+                    this.Area = this.CalculateArea(_dimension);
                     break;
             }
         }
+
     }
 }

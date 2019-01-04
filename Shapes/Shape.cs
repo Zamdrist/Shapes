@@ -2,10 +2,11 @@
 using System;
 namespace Shapes
 {
-    abstract class Shape
+    public abstract class Shape
     {
         protected Shape()
         {
+            // ReSharper disable once VirtualMemberCallInConstructor
             this.CalculateShapeDimensions();
         }
         public abstract void CalculateShapeDimensions();
