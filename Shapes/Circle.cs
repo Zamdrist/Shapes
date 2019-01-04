@@ -28,7 +28,23 @@ namespace Shapes
         public Circle(string circleName, double dimension, CircleDimensions circleDimensions)
         {
             this.ShapeName = circleName;
-            if (Shapes.ShapeValidation.IsZero(new []{dimension}))
+           
+        }
+
+        private double RadiusFromArea(double dimension) =>
+            Math.Round(Math.Sqrt(dimension / Math.PI), 2);
+        private double RadiusFromCircumference(double dimension) =>
+            Math.Round(dimension / (2 * Math.PI), 2);
+        private double CalculateCircumference(double dimension) =>
+            Math.Round(2 * Math.PI * dimension, 2);
+        private double CalculateDiameter(double dimension) => Math.Round(2 * dimension, 2);
+        private double CalculateArea(double dimension) =>
+            Math.Round(Math.PI * Math.Pow(dimension, 2), 2);
+        private double CalculateRadiusFromDiameter(double dimension) => Math.Round(dimension / 2, 2);
+
+        public override void CalculateShapeDimensions()
+        {
+            if (Shapes.ShapeValidation.IsZero(new[] { dimension }))
             {
                 this.ShapeValidation = Shapes.ShapeValidation.IsZeroText;
                 return;
@@ -66,17 +82,5 @@ namespace Shapes
                     break;
             }
         }
-
-        private double RadiusFromArea(double dimension) =>
-            Math.Round(Math.Sqrt(dimension / Math.PI), 2);
-        private double RadiusFromCircumference(double dimension) =>
-            Math.Round(dimension / (2 * Math.PI), 2);
-        private double CalculateCircumference(double dimension) =>
-            Math.Round(2 * Math.PI * dimension, 2);
-        private double CalculateDiameter(double dimension) => Math.Round(2 * dimension, 2);
-        private double CalculateArea(double dimension) =>
-            Math.Round(Math.PI * Math.Pow(dimension, 2), 2);
-        private double CalculateRadiusFromDiameter(double dimension) => Math.Round(dimension / 2, 2);
-
     }
 }
