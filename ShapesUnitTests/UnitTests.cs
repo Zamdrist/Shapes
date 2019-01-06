@@ -242,7 +242,7 @@ namespace Shapes.UnitTests
             var rect = new Rectangle(
                 "My rectangle",
                 area,
-                Rectangle.PerfectSquare.Area);
+                Rectangle.PerfectSquareDimensions.Area);
 
             Assert.AreEqual(rect.Perimeter, perimeter);
             Assert.AreEqual(rect.Length, side);
@@ -261,7 +261,7 @@ namespace Shapes.UnitTests
             var rect = new Rectangle(
                 "My rectangle",
                 perimeter,
-                Rectangle.PerfectSquare.Perimeter);
+                Rectangle.PerfectSquareDimensions.Perimeter);
 
             Assert.AreEqual(rect.Area, area);
             Assert.AreEqual(rect.Length, side);

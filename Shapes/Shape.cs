@@ -1,20 +1,14 @@
 ﻿// ReSharper disable once RedundantUsingDirective
 using System;
+
 namespace Shapes
 {
-    public abstract class Shape
-    {
-        protected Shape()
-        {
-            // ReSharper disable once VirtualMemberCallInConstructor
-            this.CalculateShapeDimensions();
-        }
-        public abstract void CalculateShapeDimensions();
-        
-         public double Area { get; set; }
-         public string ShapeName { get; set; }
-         public string ShapeValidation { get; set; }
+	public abstract class Shape
+	{
+		public double Area { get; protected set; }
+		protected string ShapeName { get; set; }
+		public string ShapeValidation { get; protected set; }
 
-
-    }
+		public abstract void CalculateShapeDimensions();
+	}
 }
