@@ -28,13 +28,13 @@ namespace ShapeApi.Controllers
         /// Create a perfect square
         /// </summary>
         /// <param name="shapeName">The name of your square</param>
-        /// <param name="firstDimension">Either the perimeter or the area</param>
+        /// <param name="firstDimension">Either the side, perimeter or the area</param>
         /// <param name="perfectSquareDimensions">The dimension you are providing</param>
         [HttpGet("PerfectSquare/{shapeName}/{firstDimension}/{perfectSquareDimensions}")]
         public Rectangle GetPerfectSquare(
             string shapeName,
             double firstDimension,
-            Rectangle.PerfectSquare perfectSquareDimensions)
+            Rectangle.PerfectSquareDimensions perfectSquareDimensions)
         {
             return new Rectangle(shapeName, firstDimension, perfectSquareDimensions);
 

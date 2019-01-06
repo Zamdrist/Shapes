@@ -1,16 +1,14 @@
 ﻿// ReSharper disable once RedundantUsingDirective
 using System;
+
 namespace Shapes
 {
+	public abstract class Shape
+	{
+		public double Area { get; protected set; }
+		protected string ShapeName { get; set; }
+		public string ShapeValidation { get; protected set; }
 
-
-    public class Shape
-    {
-
-         public double Area { get; set; }
-         public string ShapeName { get; set; }
-         public string ShapeValidation { get; set; }
-
-
-    }
+		public abstract void CalculateShapeDimensions();
+	}
 }
