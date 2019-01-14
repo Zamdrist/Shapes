@@ -36,7 +36,7 @@ namespace Shapes
             this.CalculateShapeDimensions();
         }
 
-	    public sealed override void CalculateShapeDimensions()
+	    public override void CalculateShapeDimensions()
 	    {
 		    this.ShapeName = this._circleName;
 		    if (Shapes.ShapeValidation.IsZero(new[] {this._dimension}))

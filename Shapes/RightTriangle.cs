@@ -44,10 +44,10 @@ namespace Shapes
 			this._firstDimension = firstDimension;
 			this._secondDimension = secondDimension;
 			this._rightTriangleDimensions = dimensions;
-			this.CalculateShapeDimensions();
+            this.CalculateShapeDimensions();
 		}
 
-		public sealed override void CalculateShapeDimensions()
+		public override void CalculateShapeDimensions()
 		{
 			this.ShapeName = this._rightTriangleName;
 			if (Shapes.ShapeValidation.IsZero(new[] {this._firstDimension, this._secondDimension}))

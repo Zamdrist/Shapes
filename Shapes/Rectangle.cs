@@ -73,7 +73,7 @@ namespace Shapes
             this.CalculateShapeDimensions();
         }
 
-        public sealed override void CalculateShapeDimensions()
+        public override void CalculateShapeDimensions()
         {
             if (this._perfectSquareDimensions == 0)
             {
